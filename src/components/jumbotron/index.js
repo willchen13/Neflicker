@@ -1,16 +1,24 @@
 import React from 'react';
 import {Inner, Container, Pane, Title, Subtitle, Image, Item} from './styles/jumbotron';
+import PropTypes from 'prop-types';
 
 export default function Jumbotron({children, direction="row", ...restProps}) {
+
+    Jumbotron.propTypes = {
+        direction: PropTypes.string.isRequired,
+        children: PropTypes.node.isRequired
+    }
+
     return (
-        <Item direction={direction}>
-            <Inner>
+        <Item {...restProps}>
+            <Inner direction={direction}>
                 {children}
             </Inner>
         </Item>
     )
 }
 
+//compound components
 Jumbotron.Container = function JumbotronContainer({children, ...restProps}) {
     return <Container {...restProps}>{children}</Container>
 }
