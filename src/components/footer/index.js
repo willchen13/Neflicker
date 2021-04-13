@@ -1,14 +1,17 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {Container, Row, Column, Link, Title,Text,Break} from './styles/footer.js';
 import PropTypes from 'prop-types';
 
 export default function Footer({children, ...restProps}){
-
+    
     Footer.propTypes = {
         children: PropTypes.node.isRequired
     }
+    
     return(<Container {...restProps}> {children} </Container>)
 }
+
 
 Footer.Row = function FooterRow({children, ...restProps}) {
     return(<Row {...restProps}>{children}</Row>)

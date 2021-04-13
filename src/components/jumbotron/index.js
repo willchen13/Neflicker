@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import {Inner, Container, Pane, Title, Subtitle, Image, Item} from './styles/jumbotron';
 import PropTypes from 'prop-types';
