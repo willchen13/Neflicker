@@ -1,14 +1,27 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import JumbotronContainer from './containers/jumbotron';
-import FooterContainer from './containers/footer';
-import FaqsContainer from './containers/faq';
+import * as Routes from './constants/routes';
+import {Home, Browse, SignIn, SignUp} from './pages';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 export default function App() {
   return (
-    <>
-      <JumbotronContainer/>
-      <FaqsContainer/>
-      <FooterContainer/>
-    </>
+    <Router>
+      <Route path={Routes.SIGN_IN}>
+        <SignIn/>
+      </Route>
+
+      <Route path={Routes.SIGN_UP}>
+        <SignUp/>
+      </Route>
+
+      <Route path={Routes.BROWSE}>
+        <Browse/>
+      </Route>
+
+      <Route exact path={Routes.HOME}>
+        <Home/>
+      </Route>
+    </Router>
   );
 }
