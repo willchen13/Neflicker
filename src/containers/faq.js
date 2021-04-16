@@ -4,7 +4,7 @@ import {Accordion, OptForm} from '../components';
 
 export default function FaqsContainer(){
 
-    console.log('what is faqsData', faqsData);
+    // console.log('what is faqsData', faqsData);
 
     return(
         <Accordion>
