@@ -24,3 +24,9 @@ yarn-error.log*
 
 /public/images
 /public/videos
+
+#function and data to seed database
+seed.js
+
+#firebase config
+/lib/firebase.prod.js
