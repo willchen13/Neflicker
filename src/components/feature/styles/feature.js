@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div`
     display: flex;
@@ -6,7 +6,7 @@ export const Container = styled.div`
     border-bottom: 8px solid #222;
     text-align: center;
     padding: 165px 45px;
-`;
+`
 
 export const Title = styled.h1`
     color: white;
@@ -15,10 +15,10 @@ export const Title = styled.h1`
     font-weight: 500;
     margin: auto;
 
-    @media(max-width: 600px){
+    @media (max-width: 600px) {
         font-size: 35px;
     }
-`;
+`
 
 export const SubTitle = styled.h2`
     color: white;
@@ -26,7 +26,7 @@ export const SubTitle = styled.h2`
     font-weight: 500;
     margin: 16px auto;
 
-    @media(max-width:600px){
+    @media (max-width: 600px) {
         font-size: 18px;
     }
-`;
+`

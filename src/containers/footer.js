@@ -1,11 +1,11 @@
-import React from 'react';
-import {Footer} from '../components';
+import React from 'react'
+import { Footer } from '../components'
 
 export default function FooterContainer() {
-    return(
+    return (
         <Footer>
             <Footer.Title> Questions? Contact us</Footer.Title>
-            <Footer.Break/>
+            <Footer.Break />
             <Footer.Row>
                 <Footer.Column>
                     <Footer.Link href="#">FAQ</Footer.Link>
@@ -35,10 +35,10 @@ export default function FooterContainer() {
                     <Footer.Link href="#">Cookie Preferences</Footer.Link>
                     <Footer.Link href="#">Legal Notices</Footer.Link>
                 </Footer.Column>
-                </Footer.Row>
+            </Footer.Row>
 
-                <Footer.Break/>
-                <Footer.Text> Netflix United States </Footer.Text>
+            <Footer.Break />
+            <Footer.Text> Netflix United States </Footer.Text>
         </Footer>
     )
 }

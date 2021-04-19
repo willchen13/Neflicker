@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import {Link as ReactRouterLink} from 'react-router-dom';
+import styled from 'styled-components'
+import { Link as ReactRouterLink } from 'react-router-dom'
 
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 660px;
-    background-color: rgb(0,0,0,0.75);
+    background-color: rgb(0, 0, 0, 0.75);
     border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
@@ -13,9 +13,14 @@ export const Container = styled.div`
     max-width: 450px;
     padding: 60 68px 40px;
     margin-bottom: 100px;
-`;
+`
 
-export const Base = styled.form``;
+export const Base = styled.form`
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    width: 100%;
+`
 
 export const Error = styled.div`
     background: #e87c03;
@@ -24,14 +29,22 @@ export const Error = styled.div`
     margin: 0 0 16px;
     color: white;
     padding: 15px 20px;
+`
 
-`;
+export const Title = styled.h1`
+    color: #737373;
+    font-size: 16px;
+    font-weight: 500;
+`
 
-export const Title = styled.h1``;
+export const Text = styled.p`
+    margin-top: 10px;
+    font-size: 13px;
+    line-height: normal;
+    color: #8c8c8c;
+`
 
-export const Text = styled.p``;
-
-export const TextSmall = styled.p``;
+export const TextSmall = styled.p``
 
 export const Link = styled(ReactRouterLink)`
     color: white;
@@ -40,8 +53,35 @@ export const Link = styled(ReactRouterLink)`
     &:hover {
         text-decoration: underline;
     }
-`;
+`
 
-export const Input = styled.input``;
+export const Input = styled.input`
+    background: #333;
+    border-radius: 4px;
+    border: 0;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    padding: 5px 20px;
+    margin-bottom: 20px;
 
-export const Submit = styled.button``;
+    &:last-of-type {
+        margin-bottom: 30px;
+    }
+`
+
+export const Submit = styled.button`
+    background: #e50914;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 24px 0 12px;
+    padding: 16px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.5;
+    }
+`
