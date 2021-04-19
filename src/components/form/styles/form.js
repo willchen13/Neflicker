@@ -32,19 +32,24 @@ export const Error = styled.div`
 `
 
 export const Title = styled.h1`
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 28px;
+`
+
+export const Text = styled.p`
     color: #737373;
     font-size: 16px;
     font-weight: 500;
 `
 
-export const Text = styled.p`
+export const TextSmall = styled.p`
     margin-top: 10px;
     font-size: 13px;
     line-height: normal;
     color: #8c8c8c;
 `
-
-export const TextSmall = styled.p``
 
 export const Link = styled(ReactRouterLink)`
     color: white;
