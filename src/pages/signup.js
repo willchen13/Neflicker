@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import HeaderContainer from '../containers/header.js'
@@ -8,7 +7,7 @@ import { FirebaseContext } from '../context/firebase'
 import * as ROUTES from '../constants/routes'
 
 export default function SignUp() {
-    const { history } = useHistory()
+    const history = useHistory()
     const { firebase } = useContext(FirebaseContext)
     const [firstName, setFirstName] = useState('')
     const [email, setEmail] = useState('')
@@ -28,7 +27,9 @@ export default function SignUp() {
                         displayName: firstName,
                         photoURL: Math.floor(Math.random * 5) + 1,
                     })
-                    .then(() => history.push(ROUTES.BROWSE))
+                    .then(() => {
+                        history.push(ROUTES.BROWSE)
+                    })
             )
             .catch((error) => {
                 setFirstName('')
@@ -55,7 +56,7 @@ export default function SignUp() {
                         <Form.Input
                             type="text"
                             value={email}
-                            placeHolder="Email Address"
+                            placeholder="Email Address"
                             onChange={(e) => setEmail(e.target.value)}
                             autoComplete="off"
                         />
