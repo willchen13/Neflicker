@@ -9,21 +9,23 @@ export default function App() {
     const user = null
     return (
         <Router>
-            <IsUserRedirect user={user} exact path={Routes.SIGN_IN} loggedInPath={Routes.BROWSE}>
-                <SignIn />
-            </IsUserRedirect>
+            <Switch>
+                <IsUserRedirect user={user} exact path={Routes.SIGN_IN} loggedInPath={Routes.BROWSE}>
+                    <SignIn />
+                </IsUserRedirect>
 
-            <IsUserRedirect user={user} exact path={Routes.SIGN_UP} loggedInPath={Routes.BROWSE}>
-                <SignUp />
-            </IsUserRedirect>
+                <IsUserRedirect user={user} exact path={Routes.SIGN_UP} loggedInPath={Routes.BROWSE}>
+                    <SignUp />
+                </IsUserRedirect>
 
-            <ProtectedRoute user={user} exact path={Routes.BROWSE} redirectPath={Routes.SIGN_IN}>
-                <Browse />
-            </ProtectedRoute>
+                <ProtectedRoute user={user} exact path={Routes.BROWSE} redirectPath={Routes.SIGN_IN}>
+                    <Browse />
+                </ProtectedRoute>
 
-            <IsUserRedirect user={user} exact path={Routes.HOME} loggedInPath={Routes.BROWSE}>
-                <Home />
-            </IsUserRedirect>
+                <IsUserRedirect user={user} exact path={Routes.HOME} loggedInPath={Routes.BROWSE}>
+                    <Home />
+                </IsUserRedirect>
+            </Switch>
         </Router>
     )
 }
