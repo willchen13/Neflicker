@@ -3,7 +3,7 @@
 import React from 'react'
 import { Route, Redirect } from 'react-router-dom'
 
-export function IsUserRedirect({ user, loggedInPath, children, ...restProps }) {
+export function PublicRoute({ user, loggedInPath, children, ...restProps }) {
     return (
         <Route
             {...restProps}
@@ -26,7 +26,7 @@ export function IsUserRedirect({ user, loggedInPath, children, ...restProps }) {
     )
 }
 
-export function ProtectedRoute({ user, children, redirectPath, ...restProps }) {
+export function PrivateRoute({ user, children, redirectPath, ...restProps }) {
     return (
         <Route
             {...restProps}

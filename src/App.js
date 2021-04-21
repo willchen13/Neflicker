@@ -3,7 +3,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import * as Routes from './constants/routes'
 import { Home, Browse, SignIn, SignUp } from './pages'
-import { IsUserRedirect, ProtectedRoute } from './helpers/routes'
+import { PublicRoute, PrivateRoute } from './helpers/routes'
 import { useAuthListener } from './hooks'
 
 export default function App() {
@@ -13,21 +13,21 @@ export default function App() {
     return (
         <Router>
             <Switch>
-                <IsUserRedirect user={user} exact path={Routes.SIGN_IN} loggedInPath={Routes.BROWSE}>
+                <PublicRoute user={user} exact path={Routes.SIGN_IN} loggedInPath={Routes.BROWSE}>
                     <SignIn />
-                </IsUserRedirect>
+                </PublicRoute>
 
-                <IsUserRedirect user={user} exact path={Routes.SIGN_UP} loggedInPath={Routes.BROWSE}>
+                <PublicRoute user={user} exact path={Routes.SIGN_UP} loggedInPath={Routes.BROWSE}>
                     <SignUp />
-                </IsUserRedirect>
+                </PublicRoute>
 
-                <ProtectedRoute user={user} exact path={Routes.BROWSE} redirectPath={Routes.SIGN_IN}>
+                <PrivateRoute user={user} exact path={Routes.BROWSE} redirectPath={Routes.SIGN_IN}>
                     <Browse />
-                </ProtectedRoute>
+                </PrivateRoute>
 
-                <IsUserRedirect user={user} exact path={Routes.HOME} loggedInPath={Routes.BROWSE}>
+                <PublicRoute user={user} exact path={Routes.HOME} loggedInPath={Routes.BROWSE}>
                     <Home />
-                </IsUserRedirect>
+                </PublicRoute>
             </Switch>
         </Router>
     )
